@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Context } from "../../context/Context";
 import "./login.css";
 import axios from "axios";
+import { url } from "../../config/api";
 
 export const Login = () => {
 
@@ -15,7 +16,7 @@ const {dispatch, isFetching} = useContext(Context)
     e.preventDefault();
     dispatch({type:"LOGIN_START"});
     try {
-     const res = await axios.post("/auth/login", {
+     const res = await axios.post(`${url}/auth/login`, {
        username : userRef.current.value,
        password : passwordRef.current.value,
      })

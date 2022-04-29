@@ -3,6 +3,7 @@ import { Sidebar } from "../../components/Sidebar/Sidebar";
 import { useContext, useState } from "react";
 import { Context } from "../../context/Context";
 import axios from "axios";
+import { url } from "../../config/api";
 
 
 export const Settings = () => {
@@ -31,14 +32,14 @@ export const Settings = () => {
       updatedUser.profilePic = fileName;
   
       try {
-        await axios.post("/upload",data);
+        await axios.post(`${url}/upload`,data);
         
       } catch (error) {
         
       }
     }
     try {
-       const res = await axios.put(`/users/${user._id}`, updatedUser);
+       const res = await axios.put(`${url}/users/${user._id}`, updatedUser);
        setSuccess(true);
        dispatch({type:"UPDATE_SUCCESS", payload:res.data});
     } catch (error) {

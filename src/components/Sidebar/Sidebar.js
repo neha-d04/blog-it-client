@@ -3,12 +3,13 @@ import { useEffect, useState } from "react";
 import "./sidebar.css";
 import { Link } from "react-router-dom";
 import about from "./about2.jpg"
+import { url } from "../../config/api";
 
 export const Sidebar = () => {
   const [cats, setCats]= useState([]);
   useEffect(()=>{
     const getCats = async ()=>{
-      const res = await axios.get("/categories");
+      const res = await axios.get(`${url}/categories`);
       setCats(res.data);
     }
     getCats();

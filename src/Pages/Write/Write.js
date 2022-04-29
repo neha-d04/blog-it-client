@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import "./write.css";
 import axios from 'axios';
 import { Context } from "../../context/Context";
+import { url } from "../../config/api";
 
 export const Write = () => {
   const [title, setTitle] = useState("");
@@ -24,13 +25,13 @@ const handleSubmit = async (e)=>{
     newPost.photo = fileName;
 
     try {
-      await axios.post("/upload",data);
+      await axios.post(`${url}/upload`,data);
     } catch (error) {
       
     }
   }
   try {
-    const res = await axios.post("/posts", newPost);
+    const res = await axios.post(`${url}/posts`, newPost);
     window.location.replace("/post/"+res.data._id);
   } catch (error) {
     

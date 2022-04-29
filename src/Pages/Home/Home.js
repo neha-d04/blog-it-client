@@ -5,6 +5,7 @@ import { Posts } from "../../components/Posts/Posts";
 import { Sidebar } from "../../components/Sidebar/Sidebar";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
+import { url } from "../../config/api";
 
 export const Home = () => {
   const [posts, setPosts] = useState([]);
@@ -13,7 +14,7 @@ export const Home = () => {
 
   useEffect(()=>{
     const fetchPost = async ()=>{
-    const res = await axios.get("/posts"+search);
+    const res = await axios.get(`${url}/posts`+search);
     console.log(res);
     setPosts(res.data);
     }
