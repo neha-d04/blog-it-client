@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 export const Post = ({post}) => {
 
-const PF = "http://localhost:5000/images/"
+const PF = "https://agile-eyrie-13317.herokuapp.com/images/"
 
   return (
     <div className="post">

@@ -10,7 +10,7 @@ export const SinglePost = () => {
   // console.log(location.pathname.split("/")[2]);
   const path = location.pathname.split("/")[2];
   const [post, setPost] = useState({});
-  const PF = "http://localhost:5000/images/";
+  const PF = "https://agile-eyrie-13317.herokuapp.com/images/";
   const { user } = useContext(Context);
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");

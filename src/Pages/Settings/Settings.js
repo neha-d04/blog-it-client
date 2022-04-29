@@ -13,7 +13,7 @@ export const Settings = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [success, setSuccess] = useState(false);
-  const PF = "http://localhost:5000/images/";
+  const PF = "https://agile-eyrie-13317.herokuapp.com/images/";
 
   const handleSubmit = async (e)=>{
     dispatch({type:"UPDATE_START"});
